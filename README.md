@@ -1,2 +1,2 @@
-# portfolio-website
-Repository to store public portfolio files.
+# James Minor - Portfolio Repository 
+Repository to store public portfolio website files.
