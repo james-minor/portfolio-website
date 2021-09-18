@@ -1,0 +1,187 @@
+:root {
+	--text-color: #E7E7E7;
+	--main-color: #071013;
+	--alt-color: #FF6B6B;
+}
+
+@font-face {
+	font-family: "alegre-sans";
+	src: "fonts/AlegreSans-Regular.ttf";
+}
+
+@font-face {
+	font-family: "bitter-serif";
+	src: "fonts/Bitter-Regular.ttf";
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	overflow-x: hidden;
+
+	background-color: #14191C;
+}
+
+#app-container {
+	z-index: 100;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+/* ------- Navigation Bar Formatting ------- */
+nav {
+	position: fixed;
+	z-index: 1000;
+	width: 98vh;
+
+	margin: 0;
+
+	right: -95vh;
+	bottom: 0;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+
+	transform-origin: top left;
+	transform: rotate(-90deg);
+}
+
+#internal-links {
+	position: relative;
+
+	padding: 0;
+	margin: 0;
+
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+
+	justify-self: end;
+}
+
+#external-links {
+	position: relative;
+
+	padding: 0;
+	margin: 0;
+
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+#internal-links li,
+#external-links li {
+	display: inline;
+	padding-right: 1em;
+}
+
+#internal-links li a,
+#external-links li a {
+	font-family: "alegre-sans", sans-serif;
+	font-weight: lighter;
+
+	text-decoration: none;
+	color: var(--text-color);
+	opacity: 0.9;
+	transition-duration: 0.3s;
+}
+
+#internal-links li a:hover,
+#external-links li a:hover {
+	cursor: pointer;
+	color: var(--alt-color);
+}
+
+/* ------- Page Content Formatting ------- */
+
+.page-content {
+	z-index: 0;
+
+	color: #FDFDFD;
+}
+
+.page-content .alt-text {
+	color: var(--alt-color);
+}
+
+.page-content #page-header {
+	width: 100vw;
+
+	text-align: center;
+}
+
+.page-content #page-header h1 {
+	padding-bottom: 0;
+	margin-bottom: 0;
+
+	font-size: 42pt;
+	font-family: "bitter-serif", serif;
+}
+
+.page-content #page-header h2 {
+	padding-top: 0;
+	padding-bottom: 0.5em;
+	margin-top: 0;
+
+	font-size: 22pt;
+	font-family: "alegre-sans", sans-serif;
+	font-weight: normal;
+}
+
+.page-content #page-header #special-text {
+	color: var(--alt-color);
+}
+
+
+/* ------- Custom Scrollbar Formatting ------- */
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #0b0e0f;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #1f262b;
+	border-radius: calc(12px / 2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #2d363d;
+	cursor: pointer;
+}
+
+
+/* ------- General Button Formatting ------- */
+.button {
+	font-family: "alegre-sans", sans-serif;
+	font-weight: lighter;
+	font-size: 16pt;
+	padding: 10px 18px;
+	color: var(--text-color);
+	background-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 3px;
+	border-color: var(--text-color);
+	text-decoration: none;
+	transition-duration: 0.3s;
+	position: relative;
+	z-index: 1000;
+}
+
+.button:hover,
+.button:active {
+	color: var(--main-color);
+	background-color: var(--text-color);
+	border-color: var(--text-color);
+	cursor: pointer;
+}
