@@ -1,8 +1,6 @@
 import * as THREE from "../../lib/three/three.module.js";
 
-var shape = undefined;
-
-var scroll = 0;
+const shapes = [];
 
 var mouse =
 {
@@ -20,6 +18,7 @@ class App
 
 		this.initializeScene();
 		this.initializeObjects();
+		this.initializeLights();
 
 		window.addEventListener("resize", this.resize.bind(this));
 		window.addEventListener("scroll", this.scroll.bind(this));
@@ -56,6 +55,45 @@ class App
 
 	initializeObjects()
 	{
+		// --- Adding Mouse Geometry ---
+		this.mouseGeometry = new THREE.SphereGeometry(1, 100, 100);
+		this.mouseMaterial = new THREE.MeshLambertMaterial({});
+		this.mouseMesh = new THREE.Mesh(this.mouseGeometry, this.mouseMaterial);
+
+		// --- Defining Generic Geometry ---
+		var geometry = undefined;
+		var material = undefined;
+
+		// --- Giant Icosahedron ---
+		geometry = new THREE.IcosahedronGeometry(2);
+		material = new THREE.MeshPhongMaterial({color: 0xFF6B6B});
+		shapes.push(new THREE.Mesh(geometry, material));
+		shapes[0].position.y = -1;
+
+		// --- Tiny Icosahedrons ---
+		geometry = new THREE.IcosahedronGeometry(0.3);
+		material = new THREE.MeshPhongMaterial({color: 0x7ddbae})
+		shapes.push(new THREE.Mesh(geometry, material));
+		shapes[1].position.set(4, -7, 0);
+
+		geometry = new THREE.IcosahedronGeometry(0.5);
+		material = new THREE.MeshPhongMaterial({color: 0xf5d93d})
+		shapes.push(new THREE.Mesh(geometry, material));
+		shapes[2].position.set(6, -8, 0);
+
+		geometry = new THREE.IcosahedronGeometry(0.4);
+		material = new THREE.MeshPhongMaterial({color: 0x3dbef5})
+		shapes.push(new THREE.Mesh(geometry, material));
+		shapes[3].position.set(4.6, -9.5, 0);
+
+		for(var i = 0; i < shapes.length; i++)
+		{
+			this.scene.add(shapes[i]);
+		}
+	}
+
+	initializeLights()
+	{
 		// --- Defining the Scene Light ---
 		this.sceneLight = new THREE.DirectionalLight(0xFFFFFF, 0.7);
 		this.sceneLight.position.set(0, 20, 0);
@@ -72,21 +110,6 @@ class App
 		// --- Defining the Ambient Light Levels ---
 		this.ambientLight = new THREE.AmbientLight(0x404040, 0.5);
 		this.scene.add(this.ambientLight);
-
-		// --- Adding Mouse Geometry ---
-		this.mouseGeometry = new THREE.SphereGeometry(1, 100, 100);
-		this.mouseMaterial = new THREE.MeshLambertMaterial({});
-		this.mouseMesh = new THREE.Mesh(this.mouseGeometry, this.mouseMaterial);
-
-		// --- Adding test shape ---
-		const geometry = new THREE.IcosahedronGeometry(2);
-		//const material = new THREE.MeshPhongMaterial({color: 0xA3FDFD});
-		const material = new THREE.MeshPhongMaterial({color: 0xFF6B6B});
-
-		shape = new THREE.Mesh(geometry, material);
-		shape.position.y = -1;
-
-		this.scene.add(shape);
 	}
 
 	// Callback when the window is resized.
@@ -120,8 +143,17 @@ class App
 	// Render loop.
 	render()
 	{
-		shape.rotation.x += 0.001;
-		shape.rotation.y += 0.001;
+		shapes[0].rotation.x += 0.001;
+		shapes[0].rotation.y += 0.001;
+
+		shapes[1].rotation.x += 0.004;
+		shapes[1].rotation.y -= 0.004;
+
+		shapes[2].rotation.x -= 0.001;
+		shapes[2].rotation.z += 0.001;
+
+		shapes[3].rotation.x -= 0.002;
+		shapes[3].rotation.y += 0.002;
 
 		// Interpolating camera scroll position.
 		this.camera.position.lerp(new THREE.Vector3(0, scroll, this.camera.position.z), 0.09);
