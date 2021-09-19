@@ -138,6 +138,29 @@ nav {
 	color: var(--alt-color);
 }
 
+/* ------- About Me Section ------- */
+.page-content #about-me {
+	z-index: 1000;
+
+	position: relative;
+	top: 750px;
+	left: 3vw;
+
+	width: 60%;
+
+	font-family: "alegre-sans", sans-serif;
+
+	font-size: 28pt;
+}
+
+.page-content #about-me a {
+	color: var(--text-color);
+	transition-duration: 0.3s;
+}
+
+.page-content #about-me a:hover {
+	color: var(--alt-color);
+}
 
 /* ------- Custom Scrollbar Formatting ------- */
 

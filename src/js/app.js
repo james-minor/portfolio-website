@@ -24,6 +24,8 @@ class App
 		window.addEventListener("resize", this.resize.bind(this));
 		window.addEventListener("scroll", this.scroll.bind(this));
 		window.addEventListener("mousemove", this.mouseMove.bind(this));
+
+		this.scroll();
 	}
 
 	// Initializes the Three.js scene.
@@ -63,7 +65,7 @@ class App
 		// --- Defining the Underlighting ---
 		this.underLight = new THREE.DirectionalLight(0xFFFFFF, 0.08);
 		this.underLight.position.set(0, -50, 50);
-		this.sceneLight.target.position.set(0, 20, 0);
+		this.underLight.target.position.set(0, 20, 0);
 		this.scene.add(this.underLight);
 		this.scene.add(this.underLight.target);
 
@@ -95,7 +97,7 @@ class App
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 	}
 
-	scroll(event)
+	scroll()
 	{
 		scroll = window.pageYOffset * -0.01;
 		scroll = Math.min(Math.max(scroll, -10), 0);
@@ -122,7 +124,7 @@ class App
 		shape.rotation.y += 0.001;
 
 		// Interpolating camera scroll position.
-		this.camera.position.lerp(new THREE.Vector3(0, scroll, this.camera.position.z), 0.08);
+		this.camera.position.lerp(new THREE.Vector3(0, scroll, this.camera.position.z), 0.09);
 
 		this.renderer.render(this.scene, this.camera);
 	}

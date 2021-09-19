@@ -1,8 +1,8 @@
 const navigationList = document.getElementById("internal-links").getElementsByTagName("a");
 
 const pageScroll = [
-	500,
-	100,
+	1600,
+	800,
 	0
 ];
 
