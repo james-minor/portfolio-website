@@ -123,7 +123,7 @@ class App
 	scroll()
 	{
 		scroll = window.pageYOffset * -0.01;
-		scroll = Math.min(Math.max(scroll, -10), 0);
+		scroll = Math.min(Math.max(scroll, -20), 0);
 	}
 
 	mouseMove(event)
