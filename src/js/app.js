@@ -86,6 +86,12 @@ class App
 		shapes.push(new THREE.Mesh(geometry, material));
 		shapes[3].position.set(4.6, -9.5, 0);
 
+		// --- Second BIG Icosahedron ---
+		geometry = new THREE.IcosahedronGeometry(2);
+		material = new THREE.MeshPhongMaterial({color: 0x3dbef5})
+		shapes.push(new THREE.Mesh(geometry, material));
+		shapes[4].position.set(3.6, -15.5, 0);
+
 		for(var i = 0; i < shapes.length; i++)
 		{
 			this.scene.add(shapes[i]);
@@ -154,6 +160,10 @@ class App
 
 		shapes[3].rotation.x -= 0.002;
 		shapes[3].rotation.y += 0.002;
+
+		shapes[4].rotation.x += 0.002;
+		shapes[4].rotation.y += 0.002;
+		shapes[4].rotation.z += 0.002;
 
 		// Interpolating camera scroll position.
 		this.camera.position.lerp(new THREE.Vector3(0, scroll, this.camera.position.z), 0.09);
