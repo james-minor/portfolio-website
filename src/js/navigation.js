@@ -6,6 +6,8 @@ const pageScroll = [
 	0
 ];
 
+// --- OnClick Event Callbacks ---
+
 navigationList[0].onclick = function navigate()
 {
 	window.scrollTo(0, pageScroll[0]);

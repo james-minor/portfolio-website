@@ -70,18 +70,18 @@ class App
 		shapes.push(new THREE.Mesh(geometry, material));
 		shapes[0].position.y = -1;
 
-		// --- Tiny Icosahedrons ---
-		geometry = new THREE.IcosahedronGeometry(0.3);
+		// --- Tiny Dodecahedrons ---
+		geometry = new THREE.DodecahedronGeometry(0.3);
 		material = new THREE.MeshPhongMaterial({color: 0x7ddbae})
 		shapes.push(new THREE.Mesh(geometry, material));
 		shapes[1].position.set(4, -7, 0);
 
-		geometry = new THREE.IcosahedronGeometry(0.5);
+		geometry = new THREE.DodecahedronGeometry(0.5);
 		material = new THREE.MeshPhongMaterial({color: 0xf5d93d})
 		shapes.push(new THREE.Mesh(geometry, material));
 		shapes[2].position.set(6, -8, 0);
 
-		geometry = new THREE.IcosahedronGeometry(0.4);
+		geometry = new THREE.DodecahedronGeometry(0.4);
 		material = new THREE.MeshPhongMaterial({color: 0x3dbef5})
 		shapes.push(new THREE.Mesh(geometry, material));
 		shapes[3].position.set(4.6, -9.5, 0);

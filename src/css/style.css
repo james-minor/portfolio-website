@@ -151,8 +151,6 @@ nav {
 	font-family: "alegre-sans", sans-serif;
 
 	font-size: 28pt;
-
-	padding-bottom: 27vh;
 }
 
 .page-content #about-me a {
@@ -163,6 +161,39 @@ nav {
 .page-content #about-me a:hover {
 	color: var(--alt-color);
 }
+
+/* ------- My Works Section ------- */
+.page-content #my-work {
+	z-index: 1000;
+
+	position: relative;
+	top: 1100px;
+	left: 3vw;
+
+	padding-bottom: 200px;
+}
+
+.page-content #my-work h1 {
+	font-size: 40pt;
+}
+
+.page-content #my-work ul {
+	list-style-type: none;
+}
+
+.page-content #my-work a {
+	font-family: "alegre-sans", sans-serif;
+	font-size: 24pt;
+	color: var(--text-color);
+	transition-duration: 0.3s;
+}
+
+.page-content #my-work a:hover {
+	color: var(--alt-color);
+}
+
+
+
 
 /* ------- Custom Scrollbar Formatting ------- */
 
