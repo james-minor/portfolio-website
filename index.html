@@ -29,13 +29,9 @@
 				const app = new App();
 				window.app = app;
 			});
-
-			document.addEventListener("beforeunload", function() {
-				// Dispose of objects in this callback.
-			});
 		</script>
 
-		<nav>
+		<nav id="desktop-nav">
 			<ul id="internal-links">
 				<li><a tabindex="3">Work</a></li>
 				<li><a tabindex="2">About</a></li>
@@ -43,10 +39,24 @@
 			</ul>
 
 			<ul id="external-links">
-				<li><a target="_blank" href="mailto:contact@james-minor.com" tabindex="6">Email</a></li>
-				<li><a target="_blank" href="https://www.linkedin.com/in/james-minor/" tabindex="5">Linkedin</a></li>
-				<li><a target="_blank" href="https://github.com/james-minor" tabindex="4">Github</a></li>
+				<li><a targ	et="_blank" href="mailto:contact@james-minor.com" tabindex="7">Email</a></li>
+				<li><a target="_blank" href="https://www.linkedin.com/in/james-minor/" tabindex="6">Linkedin</a></li>
+				<li><a target="_blank" href="https://github.com/james-minor" tabindex="5">Github</a></li>
 				<li><a target="_blank" href="./src/files/Minor_Resume.pdf" tabindex="4">Resume</a></li>
+			</ul>
+		</nav>
+
+		<div id="mobile-nav-button" onclick="openMobileNavigationMenu(this)">
+			<span id="bar-1"></span>
+			<span id="bar-2"></span>
+			<span id="bar-3"></span>
+		</div>
+		<nav id="mobile-nav">
+			<ul id="external-links">
+				<li><a target="_blank" href="./src/files/Minor_Resume.pdf" tabindex="4">Resume</a></li>
+				<li><a target="_blank" href="https://github.com/james-minor" tabindex="5">Github</a></li>
+				<li><a target="_blank" href="https://www.linkedin.com/in/james-minor/" tabindex="6">Linkedin</a></li>
+				<li><a targ	et="_blank" href="mailto:contact@james-minor.com" tabindex="7">Email</a></li>
 			</ul>
 		</nav>
 

@@ -1,6 +1,6 @@
 :root {
 	--text-color: #E7E7E7;
-	--main-color: #071013;
+	--main-color: #14191C;
 	--alt-color: #FF6B6B;
 }
 
@@ -24,7 +24,7 @@ body {
 
 	overflow-x: hidden;
 
-	background-color: #14191C;
+	background-color: var(--main-color);
 }
 
 #app-container {
@@ -36,51 +36,6 @@ body {
 }
 
 /* ------- Navigation Bar Formatting ------- */
-nav {
-	position: fixed;
-	z-index: 2000;
-	width: 98vh;
-
-	margin: 0;
-
-	right: -95vh;
-	bottom: 0;
-
-	display: grid;
-	grid-template-columns: 50% 50%;
-
-	transform-origin: top left;
-	transform: rotate(-90deg);
-}
-
-#internal-links {
-	position: relative;
-
-	padding: 0;
-	margin: 0;
-
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
-
-	justify-self: end;
-}
-
-#external-links {
-	position: relative;
-
-	padding: 0;
-	margin: 0;
-
-	grid-column: 1 / 2;
-	grid-row: 1 / 2;
-}
-
-#internal-links li,
-#external-links li {
-	display: inline;
-	padding-right: 1em;
-}
-
 #internal-links li a,
 #external-links li a {
 	font-family: "alegre-sans", sans-serif;
@@ -96,6 +51,147 @@ nav {
 #external-links li a:hover {
 	cursor: pointer;
 	color: var(--alt-color);
+}
+
+/* ------- Desktop Navigation Menu Formatting ------- */
+#desktop-nav,
+#mobile-nav {
+	position: fixed;
+	z-index: 2000;
+
+	margin: 0;
+}
+
+#desktop-nav {
+	width: 98vh;
+
+	right: -95vh;
+	bottom: 0;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+
+	transform-origin: top left;
+	transform: rotate(-90deg);
+}
+
+#desktop-nav #internal-links {
+	position: relative;
+
+	padding: 0;
+	margin: 0;
+
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+
+	justify-self: end;
+}
+
+#desktop-nav #external-links {
+	position: relative;
+
+	padding: 0;
+	margin: 0;
+
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+#desktop-nav #internal-links li,
+#desktop-nav #external-links li {
+	display: inline;
+	padding-right: 1em;
+}
+
+/* ------- Mobile Navigation Menu Formatting ------- */
+#mobile-nav {
+	display: none;
+	top: 0;
+	left: 0;
+
+	width: 0%;
+	height: 100%;
+
+	background-color: var(--main-color);
+	opacity: 0.8;
+
+	overflow-x: hidden;
+
+	transition: 0.3s;
+}
+
+#mobile-nav * {
+	opacity: 1;
+}
+
+#mobile-nav #external-links {
+	position: absolute;
+
+	left: 2em;
+	top: 30vh;
+}
+
+#mobile-nav #external-links li {
+	opacity: 1;
+	list-style-type: none;
+
+	font-size: 30pt;
+}
+
+/* ----- Mobile Menu Button ----- */
+#mobile-nav-button {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+
+	width: 25px;
+	height: 19px;
+
+	display: none;
+	cursor: pointer;
+
+	z-index: 2100;
+}
+
+#mobile-nav-button #bar-1,
+#mobile-nav-button #bar-2,
+#mobile-nav-button #bar-3 {
+	display: block;
+
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--text-color);
+	margin-bottom: 5px;
+
+	border-radius: calc(3px / 2);
+
+	transition: 0.3s;
+}
+
+#mobile-nav-button:hover #bar-1,
+#mobile-nav-button:hover #bar-2,
+#mobile-nav-button:hover #bar-3 {
+	background-color: var(--alt-color);
+}
+
+/* ----- Transitioning the Mobile Menu Button ----- */
+
+/* --- Changing 1st Bar --- */
+.menu-opened #bar-1 {
+	-webkit-transform: translate(0px, 10px) rotate(-45deg);
+	transform: translate(0px, 10px) rotate(-45deg);
+}
+
+/* --- Changing 2nd Bar --- */
+.menu-opened #bar-2 {
+	opacity: 0;
+}
+
+/* --- Changing 3rd Bar --- */
+.menu-opened #bar-3 {
+	-webkit-transform: translate(0px, -6px) rotate(45deg);
+	transform: translate(0px, -6px) rotate(45deg);
 }
 
 /* ------- Page Content Formatting ------- */
@@ -193,8 +289,6 @@ nav {
 }
 
 
-
-
 /* ------- Custom Scrollbar Formatting ------- */
 
 ::-webkit-scrollbar {
@@ -240,4 +334,16 @@ nav {
 	background-color: var(--text-color);
 	border-color: var(--text-color);
 	cursor: pointer;
+}
+
+/* ------- Mobile Formatting ------- */
+@media only screen and (max-width: 700px) {
+	#desktop-nav {
+		display: none;
+	}
+
+	#mobile-nav-button,
+	#mobile-nav {
+		display: block;
+	}
 }
