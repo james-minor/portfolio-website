@@ -38,7 +38,7 @@ class App
 
 		// --- Defining The Camera ---
 		this.camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000);
-		this.camera.position.z = 5;
+		this.camera.position.z = 5.5;
 
 		// --- Defining the Renderer ---
 		this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true});
