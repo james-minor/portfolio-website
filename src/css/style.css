@@ -304,11 +304,12 @@ section a:hover {
 #section-2 {
 	background-color: var(--section-2-background);
 	padding-left: clamp(50px, 5vw, 80px);
-	font-size: 28pt;
+
+	font-size: clamp(20pt, 4vw, 28pt);
 }
 
 #section-2 p {
-	width: clamp(450px, 60%, 1000px);
+	width: clamp(400px, 60%, 1000px);
 }
 
 #section-2 .shape-fill {
@@ -321,9 +322,13 @@ section a:hover {
 
 	padding-left: clamp(50px, 5vw, 80px);
 
-	font-size: 24pt;
+	font-size: clamp(20pt, 4vw, 28pt);
 
 	padding-top: 18vh;
+}
+
+#section-3 .content {
+	max-width: 90vw;
 }
 
 #section-3 h1 {
