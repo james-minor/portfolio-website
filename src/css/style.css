@@ -234,10 +234,6 @@ h1 {
 	font-family: "bitter-serif", serif;
 }
 
-a {
-	z-index: 2000;
-}
-
 section {
 	position: relative;
 
@@ -250,11 +246,14 @@ section {
 	padding-bottom: 20vh;
 }
 
+section .content {
+	position: absolute;
+	z-index: 2000;
+}
+
 section a {
 	color: var(--text-color);
 	transition-duration: 0.3s;
-
-	z-index: 2000;
 }
 
 section a:hover {
