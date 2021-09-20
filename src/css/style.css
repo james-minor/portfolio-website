@@ -255,7 +255,7 @@ section {
 }
 
 section .content {
-	max-width: 90vw;
+	max-width: 75vw;
 
 	position: relative;
 	z-index: 1500;
