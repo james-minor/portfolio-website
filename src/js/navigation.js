@@ -5,7 +5,7 @@ var scrollBreakPoints = [];
 
 for(var i = 0; i < sections.length; i++)
 {
-	scrollBreakPoints.push(sections[i].offsetTop);
+	scrollBreakPoints.push(sections[i].offsetTop + 15);
 }
 
 window.addEventListener('resize', function(event)

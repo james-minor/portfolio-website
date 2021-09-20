@@ -65,6 +65,10 @@ body {
 }
 
 /* ------- Navigation Bar Formatting ------- */
+nav * {
+	z-index: 3000;
+}
+
 #internal-links li a,
 #external-links li a {
 	font-family: "alegre-sans", sans-serif;
@@ -143,7 +147,9 @@ body {
 
 	background-color: rgba(20, 25, 30, 0.88);
 
-	overflow-x: hidden;
+	overflow: hidden;
+
+	z-index: 2050;
 
 	transition: 0.3s;
 }
@@ -243,11 +249,12 @@ section {
 	min-height: 65vh;
 	width: 100vw;
 
-	padding-bottom: 20vh;
+	padding-top: 20vh;
+	padding-bottom: 10vh;
 }
 
 section .content {
-	position: absolute;
+	position: relative;
 	z-index: 2000;
 }
 
@@ -265,6 +272,9 @@ section a:hover {
 	text-align: center;
 
 	background-color: var(--section-1-background);
+	min-height: 85vh;
+
+	padding-top: 0;
 }
 
 #section-1 h1 {
@@ -293,14 +303,14 @@ section a:hover {
 #section-2 {
 	background-color: var(--section-2-background);
 
-	padding-top: 17vh;
 	padding-left: 3vw;
+	align-items: center;
 
 	font-size: 28pt;
 }
 
 #section-2 p {
-	width: 60%;
+	width: clamp(450px, 60%, 1000px);
 }
 
 #section-2 .shape-fill {
@@ -312,6 +322,7 @@ section a:hover {
 	background-color: var(--section-3-background);
 
 	padding-left: 3vw;
+	justify-content: center;
 
 	font-size: 24pt;
 
