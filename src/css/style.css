@@ -6,6 +6,7 @@
 	--section-1-background: #14191C;
 	--section-2-background: #0e1214;
 	--section-3-background: #0a0d0e;
+	--section-4-background: #040506;
 }
 
 @font-face {
@@ -69,8 +70,8 @@ nav * {
 	z-index: 5000;
 }
 
-#internal-links li a,
-#external-links li a {
+.internal-links li a,
+.external-links li a {
 	font-family: "alegre-sans", sans-serif;
 	font-weight: lighter;
 
@@ -80,8 +81,8 @@ nav * {
 	transition-duration: 0.3s;
 }
 
-#internal-links li a:hover,
-#external-links li a:hover {
+.internal-links li a:hover,
+.external-links li a:hover {
 	cursor: pointer;
 	color: var(--alt-color);
 }
@@ -108,7 +109,7 @@ nav * {
 	transform: rotate(-90deg);
 }
 
-#desktop-nav #internal-links {
+#desktop-nav .internal-links {
 	position: relative;
 
 	padding: 0;
@@ -120,7 +121,7 @@ nav * {
 	justify-self: end;
 }
 
-#desktop-nav #external-links {
+#desktop-nav .external-links {
 	position: relative;
 
 	padding: 0;
@@ -130,8 +131,8 @@ nav * {
 	grid-row: 1 / 2;
 }
 
-#desktop-nav #internal-links li,
-#desktop-nav #external-links li {
+#desktop-nav .internal-links li,
+#desktop-nav .external-links li {
 	display: inline;
 	padding-right: 1em;
 }
@@ -158,14 +159,14 @@ nav * {
 	opacity: 1;
 }
 
-#mobile-nav #external-links {
+#mobile-nav .external-links {
 	position: absolute;
 
 	left: 2em;
 	top: 30vh;
 }
 
-#mobile-nav #external-links li {
+#mobile-nav .external-links li {
 	opacity: 1;
 	list-style-type: none;
 
@@ -336,6 +337,26 @@ section a:hover {
 #section-3 .shape-fill {
 	fill: var(--section-2-background);
 }
+
+
+/* ----- Section 4 Formatting ----- */
+#section-4 {
+	background-color: var(--section-4-background);
+
+	padding-left: clamp(50px, 5vw, 80px);
+
+	font-size: 15pt;
+	min-height: 10vh;
+}
+
+#section-4 p {
+	font-size: 11pt;
+}
+
+#section-4 .shape-fill {
+	fill: var(--section-3-background);
+}
+
 
 /* ------- Custom Scrollbar Formatting ------- */
 
