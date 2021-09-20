@@ -255,8 +255,6 @@ section {
 }
 
 section .content {
-	max-width: 75vw;
-
 	position: relative;
 	z-index: 1500;
 }
@@ -311,7 +309,7 @@ section a:hover {
 }
 
 #section-2 p {
-	width: clamp(400px, 60%, 1000px);
+	width: clamp(300px, 60%, 1000px);
 }
 
 #section-2 .shape-fill {
@@ -339,6 +337,7 @@ section a:hover {
 
 #section-3 ul {
 	list-style-type: none;
+	padding: 0;
 }
 
 #section-3 .shape-fill {
