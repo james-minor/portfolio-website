@@ -90,7 +90,7 @@ class App
 		geometry = new THREE.IcosahedronGeometry(2);
 		material = new THREE.MeshPhongMaterial({color: 0x3dbef5})
 		shapes.push(new THREE.Mesh(geometry, material));
-		shapes[4].position.set(3.6, -15.5, 0);
+		shapes[4].position.set(3.6, -17.5, 0);
 
 		for(var i = 0; i < shapes.length; i++)
 		{
@@ -128,7 +128,7 @@ class App
 
 	scroll()
 	{
-		scroll = window.pageYOffset * -0.01;
+		scroll = window.pageYOffset * -0.012;
 		scroll = Math.min(Math.max(scroll, -20), 0);
 	}
 

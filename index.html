@@ -22,6 +22,7 @@
 	</head>
 
 	<body>
+		<!--Initializing ThreeJS-->
 		<script type="module">
 			import { App } from "./src/js/app.js";
 
@@ -31,6 +32,7 @@
 			});
 		</script>
 
+		<!--Desktop Navigation Bar-->
 		<nav id="desktop-nav">
 			<ul id="internal-links">
 				<li><a tabindex="3">Work</a></li>
@@ -46,6 +48,7 @@
 			</ul>
 		</nav>
 
+		<!--Mobile Navigation Bar-->
 		<div id="mobile-nav-button" onclick="openMobileNavigationMenu(this)">
 			<span id="bar-1"></span>
 			<span id="bar-2"></span>
@@ -60,41 +63,58 @@
 			</ul>
 		</nav>
 
-		<div class="page-content">
+		<!--Page Contents-->
 
-			<div id="page-header">
-				<h1>James <span class="alt-text">Minor</span></h1>
-				<span>
-					<h2>Create <span id="special-text"></span>.</h2>
-				</span>
+		<!--Page Hero Section-->
+		<section id="section-1">
+			<h1>James <span class="alt-text">Minor</span></h1>
+			<span>
+				<h2>Create <span class="alt-text" id="special-text"></span>.</h2>
+			</span>
 
-				<a href="mailto:contact@james-minor.com" class="button" id="contact-button">Contact Me</a>
+			<a href="mailto:contact@james-minor.com" class="button" id="contact-button">Contact Me</a>
+		</section>
+
+		<!--About Me Section-->
+		<section id="section-2">
+			<div class="wave-border">
+				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+					<path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+				</svg>
 			</div>
 
-			<div id="about-me">
+			<p>
 				Hi! My name is <span class="alt-text">James Minor</span> and I am a junior software developer. I have a keen interest in both web and game development.
 				I am currently attending the University of Wisconsin - Stevens Point, for my B.S. in Computer Information Systems.
 				Currently I work as the Information Technology Coordinator at <a target="_blank" href="https://www.battinoforsenate.us">Battino for U.S. Senate</a>.
-				<br><br>
+			</p>
+
+			<p>
 				Feel free to <a href="mailto:contact@james-minor.com">reach out to me</a>!
+			</p>
 
+		</section>
+
+		<!--My Work Section-->
+		<section id="section-3">
+			<div class="wave-border">
+				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+			        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+			    </svg>
 			</div>
 
-			<div id="my-work">
-				<h1>Work</h1>
+			<h1>Work</h1>
 
-				<ul>
-					<li><a target="_blank" href="https://battinoforsenate.us/">Dr. Gillian Battino for US Senate</a></li>
-				</ul>
+			<ul>
+				<li><a target="_blank" href="https://battinoforsenate.us/">Dr. Gillian Battino for US Senate</a></li>
+			</ul>
 
-				<h1>Lab</h1>
-				<ul>
-					<li><a target="_blank" href="https://github.com/james-minor/PyGame-3D-Engine">Python 3D Render</a></li>
-					<li><a target="_blank" href="https://github.com/james-minor/portfolio-website">Personal Portfolio</a></li>
-				</ul>
-
-			</div>
-
+			<h1>Lab</h1>
+			<ul>
+				<li><a target="_blank" href="https://github.com/james-minor/PyGame-3D-Engine">Python 3D Render</a></li>
+				<li><a target="_blank" href="https://github.com/james-minor/portfolio-website">Personal Portfolio</a></li>
+			</ul>
+		</section>
 	</body>
 
 	<footer>

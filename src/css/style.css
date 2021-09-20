@@ -2,6 +2,10 @@
 	--text-color: #E7E7E7;
 	--main-color: #14191C;
 	--alt-color: #FF6B6B;
+
+	--section-1-background: #14191C;
+	--section-2-background: #0e1214;
+	--section-3-background: #0a0d0e;
 }
 
 @font-face {
@@ -25,6 +29,9 @@ body {
 	overflow-x: hidden;
 
 	background-color: var(--main-color);
+	color: var(--text-color);
+
+	font-family: "alegre-sans", sans-serif;
 }
 
 #app-container {
@@ -33,6 +40,28 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+.wave-border {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-border svg {
+	position: relative;
+	display: block;
+	width: calc(115% + 1.3px);
+	height: 87px;
+	transform: rotateY(180deg);
+}
+
+.wave-border .shape-fill {
+	fill: #FFFFFF;
 }
 
 /* ------- Navigation Bar Formatting ------- */
@@ -112,8 +141,7 @@ body {
 	width: 0%;
 	height: 100%;
 
-	background-color: var(--main-color);
-	opacity: 0.8;
+	background-color: rgba(20, 25, 30, 0.88);
 
 	overflow-x: hidden;
 
@@ -136,6 +164,8 @@ body {
 	list-style-type: none;
 
 	font-size: 30pt;
+
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
 /* ----- Mobile Menu Button ----- */
@@ -196,98 +226,110 @@ body {
 
 /* ------- Page Content Formatting ------- */
 
-.page-content {
-	z-index: 0;
-
-	color: #FDFDFD;
-}
-
-.page-content .alt-text {
+.alt-text {
 	color: var(--alt-color);
 }
 
-.page-content #page-header {
-	width: 100vw;
-
-	text-align: center;
-}
-
-.page-content #page-header h1 {
-	padding-bottom: 0;
-	margin-bottom: 0;
-
-	font-size: 42pt;
+h1 {
 	font-family: "bitter-serif", serif;
 }
 
-.page-content #page-header h2 {
+a {
+	z-index: 2000;
+}
+
+section {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	min-height: 65vh;
+	width: 100vw;
+
+	padding-bottom: 20vh;
+}
+
+section a {
+	color: var(--text-color);
+	transition-duration: 0.3s;
+
+	z-index: 2000;
+}
+
+section a:hover {
+	color: var(--alt-color);
+}
+
+/* ----- Section 1 Formatting ----- */
+#section-1 {
+	text-align: center;
+
+	background-color: var(--section-1-background);
+}
+
+#section-1 h1 {
+	font-size: 42pt;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#section-1 h2 {
 	padding-top: 0;
 	padding-bottom: 0.5em;
 	margin-top: 0;
 
 	font-size: 22pt;
-	font-family: "alegre-sans", sans-serif;
 	font-weight: normal;
 }
 
-.page-content #page-header #special-text {
-	color: var(--alt-color);
+#section-1 .button {
+	width: 13vw;
+	min-width: 150px;
+	align-self: center;
 }
 
-/* ------- About Me Section ------- */
-.page-content #about-me {
-	z-index: 1000;
 
-	position: relative;
-	top: 750px;
-	left: 3vw;
+/* ----- Section 2 Formatting ----- */
+#section-2 {
+	background-color: var(--section-2-background);
 
-	width: 60%;
-
-	font-family: "alegre-sans", sans-serif;
+	padding-top: 17vh;
+	padding-left: 3vw;
 
 	font-size: 28pt;
 }
 
-.page-content #about-me a {
-	color: var(--text-color);
-	transition-duration: 0.3s;
+#section-2 p {
+	width: 60%;
 }
 
-.page-content #about-me a:hover {
-	color: var(--alt-color);
+#section-2 .shape-fill {
+	fill: var(--section-1-background);
 }
 
-/* ------- My Works Section ------- */
-.page-content #my-work {
-	z-index: 1000;
+/* ----- Section 3 Formatting ----- */
+#section-3 {
+	background-color: var(--section-3-background);
 
-	position: relative;
-	top: 1100px;
-	left: 3vw;
+	padding-left: 3vw;
 
-	padding-bottom: 200px;
+	font-size: 24pt;
+
+	padding-top: 18vh;
 }
 
-.page-content #my-work h1 {
+#section-3 h1 {
 	font-size: 40pt;
 }
 
-.page-content #my-work ul {
+#section-3 ul {
 	list-style-type: none;
 }
 
-.page-content #my-work a {
-	font-family: "alegre-sans", sans-serif;
-	font-size: 24pt;
-	color: var(--text-color);
-	transition-duration: 0.3s;
+#section-3 .shape-fill {
+	fill: var(--section-2-background);
 }
-
-.page-content #my-work a:hover {
-	color: var(--alt-color);
-}
-
 
 /* ------- Custom Scrollbar Formatting ------- */
 
@@ -296,7 +338,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #0b0e0f;
+	background-color: #080B0C;
 }
 
 ::-webkit-scrollbar-thumb {
