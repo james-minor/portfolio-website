@@ -21,6 +21,7 @@
 
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
@@ -41,13 +42,15 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+
+	overflow: hidden;
 }
 
 .wave-border {
 	position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
@@ -275,11 +278,11 @@ section a:hover {
 	background-color: var(--section-1-background);
 	min-height: 85vh;
 
-	padding-top: 0;
+	padding-top: 5vh;
 }
 
 #section-1 h1 {
-	font-size: 42pt;
+	font-size: clamp(30pt, 3.3vw, 45pt);
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
@@ -289,7 +292,7 @@ section a:hover {
 	padding-bottom: 0.5em;
 	margin-top: 0;
 
-	font-size: 22pt;
+	font-size: clamp(15pt, 3vw, 22pt);
 	font-weight: normal;
 }
 
