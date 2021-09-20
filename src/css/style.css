@@ -250,11 +250,13 @@ section {
 	min-height: 65vh;
 	width: 100vw;
 
-	padding-top: 20vh;
-	padding-bottom: 10vh;
+	padding-top: clamp(180px, 20vw, 220px);
+	padding-bottom: clamp(0px, 10vw, 50px);
 }
 
 section .content {
+	max-width: 90vw;
+
 	position: relative;
 	z-index: 1500;
 }
@@ -305,7 +307,7 @@ section a:hover {
 	background-color: var(--section-2-background);
 	padding-left: clamp(50px, 5vw, 80px);
 
-	font-size: clamp(20pt, 4vw, 28pt);
+	font-size: clamp(17pt, 4vw, 28pt);
 }
 
 #section-2 p {
