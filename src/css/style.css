@@ -66,7 +66,7 @@ body {
 
 /* ------- Navigation Bar Formatting ------- */
 nav * {
-	z-index: 3000;
+	z-index: 5000;
 }
 
 #internal-links li a,
@@ -255,7 +255,7 @@ section {
 
 section .content {
 	position: relative;
-	z-index: 2000;
+	z-index: 1500;
 }
 
 section a {
@@ -302,10 +302,7 @@ section a:hover {
 /* ----- Section 2 Formatting ----- */
 #section-2 {
 	background-color: var(--section-2-background);
-
-	padding-left: 3vw;
-	align-items: center;
-
+	padding-left: clamp(50px, 5vw, 80px);
 	font-size: 28pt;
 }
 
@@ -321,8 +318,7 @@ section a:hover {
 #section-3 {
 	background-color: var(--section-3-background);
 
-	padding-left: 3vw;
-	justify-content: center;
+	padding-left: clamp(50px, 5vw, 80px);
 
 	font-size: 24pt;
 
