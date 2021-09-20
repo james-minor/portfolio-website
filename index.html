@@ -29,16 +29,6 @@
 			document.addEventListener("DOMContentLoaded", function() {
 				const app = new App();
 				window.app = app;
-
-
-			});
-		</script>
-
-		<!--Loading Screen-->
-		<script type="text/javascript">
-			window.addEventListener("load", function(event) {
-				// TODO: Add loading screen to hide from here.
-				console.log("loaded");
 			});
 		</script>
 
@@ -132,6 +122,29 @@
 			</div>
 
 		</section>
+
+		<!--Loading Screen-->
+		<div id="loading-screen">
+			<div id="loading-content"></div>
+		</div>
+		<script type="text/javascript">
+
+			var rotation = 90;
+			function rotate()
+			{
+				document.getElementById("loading-content").style.transform = "rotate(" + rotation + "deg)";
+				rotation += 90
+			}
+
+			setInterval(rotate, 1400);
+
+			window.addEventListener("load", function(event) {
+				document.getElementById("loading-content").style.opacity = "0";
+				document.getElementById("loading-screen").style.height = "0%";
+
+				clearInterval(rotate);
+			});
+		</script>
 	</body>
 
 	<footer>
